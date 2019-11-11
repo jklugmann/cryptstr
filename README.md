@@ -2,10 +2,9 @@
 The goal of compile-time string obfuscation is to hide critical strings from an attacker during static analysis. An attacker may
 run the following command to retrieve the list of strings from an executable:
 
-...
+```bash
 $ strings a.out
-
-...
+```
 
 strings lists all printable strings with at least four characters followed by an unreadable character. The output would contain
 all hard-coded string constants, which can be used to derive further meaning of code referencing those constants. 
@@ -25,6 +24,7 @@ or
 $ g++ -std=c++17 -Isrc/ main.cpp
 ```
 
+# source
 ```cpp
 #include <cryptstr/cryptstr.hpp>
 #include <iostream>
@@ -82,7 +82,8 @@ int main(int argc, char *argv[]) {
 # a.out strings output
 Note that the following table of the example's string output does not contain the crypted strings but all 
 other compile-time strings.
-...
+
+```bash
 $ strings a.out
 /lib64/ld-linux-x86-64.so.2
 libstdc++.so.6
@@ -2222,5 +2223,5 @@ _ZNSt8ios_base4InitD1Ev@@GLIBCXX_3.4
 .debug_line
 .debug_str
 .debug_ranges
-...
+```
 
